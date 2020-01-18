@@ -2,7 +2,7 @@
 
 Name: pentaho-libxml
 Version: 1.1.3
-Release: 10%{?dist}
+Release: 8%{?dist}
 Summary: Namespace aware SAX-Parser utility library
 License: LGPLv2
 Group: System Environment/Libraries
@@ -11,7 +11,7 @@ Group: System Environment/Libraries
 #to simplify the licensing
 Source: %{origname}-%{version}-jarsdeleted.zip
 URL: http://reporting.pentaho.org/
-BuildRequires: ant, ant-contrib, java-devel, jpackage-utils, libbase, libloader
+BuildRequires: ant, ant-contrib, ant-nodeps, java-devel, jpackage-utils, libbase, libloader
 Buildroot: %{_tmppath}/%{origname}-%{version}-%{release}-root-%(%{__id_u} -n)
 Requires: java, jpackage-utils, libbase >= 1.1.2, libloader >= 1.1.2
 BuildArch: noarch
@@ -72,12 +72,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_javadocdir}/%{origname}
 
 %changelog
-* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.1.3-10
-- Mass rebuild 2013-12-27
-
-* Fri Dec 06 2013 Caolán McNamara <caolanm@redhat.com> - 1.1.3-8
-- Resolves: rhbz#1038182 drop ant-nodeps depend
-
 * Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.1.3-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
